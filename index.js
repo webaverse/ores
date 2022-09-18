@@ -42,17 +42,21 @@ export default e => {
     const meshSize = 3;
     for (let i = 0; i < meshes.length; i++) {
       const mesh = meshes[i];
+      mesh.position.y = 0.5;
       mesh.position.x = (-meshes.length / 2 + i) * meshSize;
+      mesh.scale.multiplyScalar(2);
       app.add(mesh);
       mesh.updateMatrixWorld();
     }
 
     (async () => {
       const oreMesh = meshes[0];
-      const targetRatio = 0.3;
-      const targetError = 0.05;
-      const result = await physics.meshoptSimplifySloppy(oreMesh, targetRatio, targetError);
-      console.log('got result', oreMesh, result);
+      const targetRatio = 0.2;
+      const targetError = 0.1;
+      const oreMesh2 = await physics.meshoptSimplifySloppy(oreMesh, targetRatio, targetError);
+      oreMesh2.position.z += meshSize;
+      app.add(oreMesh2);
+      oreMesh2.updateMatrixWorld();
     })();
 
     /* if (!live) {
