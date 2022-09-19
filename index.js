@@ -104,6 +104,7 @@ export default e => {
           numFramesPerRow,
           worldWidth,
           worldHeight,
+          worldOffset,
         } = spritesheet;
 
         // console.log('got spritesheet', spritesheet);
@@ -130,6 +131,7 @@ export default e => {
         const spritesheetMesh = new SpritesheetMesh({
           texture,
           worldSize,
+          worldOffset,
           numAngles,
           numSlots,
         });
