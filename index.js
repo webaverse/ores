@@ -1,7 +1,6 @@
 import * as THREE from 'three';
-// import easing from './easing.js';
 import metaversefile from 'metaversefile';
-const {useApp, useCamera, useFrame, useLoaders, useGeometries, useMaterials, usePhysics, useSpriting} = metaversefile;
+const {useApp, useCamera, useFrame, usePhysics, useSpriting} = metaversefile;
 
 // const baseUrl = import.meta.url.replace(/(\/)[^\/\\]*$/, '$1');
 
@@ -157,8 +156,6 @@ export default e => {
           spritesheetMesh.updateMatrixWorld();
     
           const {material} = spritesheetMesh;
-          // material.uniforms.uTime.value = uTime;
-          // material.uniforms.uTime.needsUpdate = true;
           material.uniforms.uY.value =
             mod(-localEuler.y + Math.PI/2 + (Math.PI * 2) / numAngles / 2, Math.PI * 2) / (Math.PI * 2);
           material.uniforms.uY.needsUpdate = true;
