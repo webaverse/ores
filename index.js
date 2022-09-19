@@ -109,7 +109,7 @@ export default e => {
 
         // console.log('got spritesheet', spritesheet);
 
-        const canvas = document.createElement('canvas');
+        /* const canvas = document.createElement('canvas');
         canvas.width = result.width;
         canvas.height = result.height;
         canvas.style.cssText = `\
@@ -121,7 +121,7 @@ export default e => {
         `;
         const ctx = canvas.getContext('2d');
         ctx.drawImage(result, 0, 0);
-        document.body.appendChild(canvas);
+        document.body.appendChild(canvas); */
 
         const texture = new THREE.Texture(result);
         texture.needsUpdate = true;
